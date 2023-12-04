@@ -1,5 +1,7 @@
 package onlineShoppingCart.shoppingCart.entities;
 
+import lombok.Getter;
+
 import javax.persistence.*;
 import javax.validation.Valid;
 import javax.validation.constraints.Future;
@@ -7,6 +9,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.PositiveOrZero;
 import java.time.LocalDate;
 
+@Getter
 @Valid
 @Entity
 @Table(name = "products")
@@ -51,56 +54,28 @@ public class Products extends BaseEntity{
         this.expDate = expDate;
     }
 
-    public String getName() {
-        return name;
-    }
-
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Integer getStock() {
-        return stock;
     }
 
     public void setStock(Integer stock) {
         this.stock = stock;
     }
 
-    public String getImagePath() {
-        return imagePath;
-    }
-
     public void setImagePath(String imagePath) {
         this.imagePath = imagePath;
-    }
-
-    public Double getPrice() {
-        return price;
     }
 
     public void setPrice(Double price) {
         this.price = price;
     }
 
-    public String getDescription() {
-        return description;
-    }
-
     public void setDescription(String description) {
         this.description = description;
     }
 
-    public Categories getCategoryId() {
-        return categoryId;
-    }
-
     public void setCategoryId(Categories categoryId) {
         this.categoryId = categoryId;
-    }
-
-    public LocalDate getExpDate() {
-        return expDate;
     }
 
     public void setExpDate(LocalDate expDate) {

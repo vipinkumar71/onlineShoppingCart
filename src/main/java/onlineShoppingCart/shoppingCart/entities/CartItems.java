@@ -10,6 +10,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.PositiveOrZero;
 
 
+@Getter
 @Valid
 @Entity
 @Table(name = "cart_items")
@@ -34,7 +35,6 @@ public class CartItems extends BaseEntity{
 
     public CartItems() {
         super();
-        System.out.println("in ctor"+getClass().getName());
     }
 
     public CartItems(Integer quantity, Double totalPrice, Carts cartId, Products productId) {
@@ -59,22 +59,6 @@ public class CartItems extends BaseEntity{
     public void setProductId(Products productId) {
         this.productId = productId;
     }
-    public Integer getQuantity() {
-        return quantity;
-    }
-
-    public Double getTotalPrice() {
-        return totalPrice;
-    }
-
-    public Carts getCartId() {
-        return cartId;
-    }
-
-    public Products getProductId() {
-        return productId;
-    }
-
 
 
     @Override

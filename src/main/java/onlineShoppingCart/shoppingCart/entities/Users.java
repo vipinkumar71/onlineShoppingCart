@@ -45,7 +45,6 @@ public class Users extends BaseEntity{
 
     public Users() {
         super();
-        System.out.println("in ctor " + getClass().getName());
     }
 
 

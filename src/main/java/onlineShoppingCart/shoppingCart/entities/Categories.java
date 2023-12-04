@@ -1,6 +1,7 @@
 package onlineShoppingCart.shoppingCart.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.Getter;
 
 import javax.persistence.*;
 import javax.validation.Valid;
@@ -8,6 +9,7 @@ import javax.validation.constraints.NotBlank;
 import java.util.HashSet;
 import java.util.Set;
 
+@Getter
 @Valid
 @Entity
 @Table(name="categories")
@@ -36,40 +38,6 @@ public class Categories extends BaseEntity{
         this.categoryName = categoryName;
         this.description = description;
     }
-
-
-    public String getCategoryName() {
-        return categoryName;
-    }
-
-
-    public void setCategoryName(String categoryName) {
-        this.categoryName = categoryName;
-    }
-
-
-    public String getDescription() {
-        return description;
-    }
-
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-
-
-
-    public Set<Products> getProductList() {
-        return productList;
-    }
-
-
-    public void setProductList(Products product) {
-        this.productList.add(product);
-    }
-
-
     @Override
     public String toString() {
         return "Categories [category_Name=" + categoryName + ", description=" + description + ", getId()=" + getId()+ "]";

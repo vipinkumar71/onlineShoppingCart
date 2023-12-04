@@ -1,5 +1,7 @@
 package onlineShoppingCart.shoppingCart.entities;
 
+import lombok.Getter;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -7,6 +9,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
+@Getter
 @Valid
 @Entity
 @Table(name="delivery_address")
@@ -44,40 +47,20 @@ public class DeliveryAddress extends BaseEntity{
         this.zipCode = zipCode;
     }
 
-    public String getAdressLine1() {
-        return adressLine1;
-    }
-
     public void setAdressLine1(String adressLine1) {
         this.adressLine1 = adressLine1;
-    }
-
-    public String getAdressLine2() {
-        return adressLine2;
     }
 
     public void setAdressLine2(String adressLine2) {
         this.adressLine2 = adressLine2;
     }
 
-    public String getCity() {
-        return city;
-    }
-
     public void setCity(String city) {
         this.city = city;
     }
 
-    public String getState() {
-        return state;
-    }
-
     public void setState(String state) {
         this.state = state;
-    }
-
-    public String getZipCode() {
-        return zipCode;
     }
 
     public void setZipCode(String zipCode) {

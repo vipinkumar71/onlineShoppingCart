@@ -22,7 +22,6 @@ public class BaseEntity {
         super();
         this.id = id;
     }
-
     public void setId(Long id) {
         this.id = id;
     }

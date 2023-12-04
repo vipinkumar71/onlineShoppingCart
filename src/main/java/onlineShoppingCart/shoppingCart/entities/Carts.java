@@ -1,6 +1,7 @@
 package onlineShoppingCart.shoppingCart.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.Getter;
 
 import javax.persistence.*;
 import javax.validation.Valid;
@@ -9,6 +10,7 @@ import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
+@Getter
 @Valid
 @Entity
 @Table(name = "carts")
@@ -51,40 +53,20 @@ public class Carts  extends BaseEntity{
         this.user = user;
     }
 
-    public LocalDate getCreated() {
-        return created;
-    }
-
     public void setCreated(LocalDate created) {
         this.created = created;
-    }
-
-    public LocalDate getUpdated() {
-        return updated;
     }
 
     public void setUpdated(LocalDate updated) {
         this.updated = updated;
     }
 
-    public int getTotalItems() {
-        return totalItems;
-    }
-
     public void setTotalItems(int totalItems) {
         this.totalItems = totalItems;
     }
 
-    public double getTotalPrice() {
-        return totalPrice;
-    }
-
     public void setTotalPrice(double totalPrice) {
         this.totalPrice = totalPrice;
-    }
-
-    public Users getUser() {
-        return user;
     }
 
     public void setUser(Users user) {
@@ -97,10 +79,6 @@ public class Carts  extends BaseEntity{
 
     public void emptyCartItems() {
         cartItems.clear();
-    }
-
-    public Set<CartItems> getCartItems(){
-        return cartItems;
     }
 
 }

@@ -9,11 +9,8 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/cart")
 public class CartController {
-
     @Autowired
     private CartService cartService;
-
-
     @DeleteMapping("/{userId}")
     public ResponseEntity<String> emptyTheCart(@PathVariable Long userId) {
         cartService.emptyTheCart(userId);

@@ -1,6 +1,7 @@
 package onlineShoppingCart.shoppingCart.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.Getter;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
@@ -8,6 +9,7 @@ import javax.persistence.*;
 import javax.validation.Valid;
 import javax.validation.constraints.PositiveOrZero;
 
+@Getter
 @Valid
 @Entity
 @Table(name="order_details")
@@ -42,23 +44,9 @@ public class OrderDetails extends BaseEntity{
     }
 
 
-
-    public Integer getQuantity() {
-        return quantity;
-    }
-
-
-
     public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
-
-
-
-    public Double getTotalPrice() {
-        return totalPrice;
-    }
-
 
 
     public void setTotalPrice(Double totalPrice) {
@@ -66,23 +54,9 @@ public class OrderDetails extends BaseEntity{
     }
 
 
-
-    public Orders getOrderId() {
-        return orderId;
-    }
-
-
-
     public void setOrderId(Orders orderId) {
         this.orderId = orderId;
     }
-
-
-
-    public Products getProductId() {
-        return productId;
-    }
-
 
 
     public void setProductId(Products productId) {
