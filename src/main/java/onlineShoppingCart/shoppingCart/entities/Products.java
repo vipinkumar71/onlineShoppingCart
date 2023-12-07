@@ -40,7 +40,6 @@ public class Products extends BaseEntity{
 
     public Products() {
         super();
-        System.out.println("in ctor " + getClass().getName());
     }
 
     public Products(String name, Double price, String description, Integer stock, Categories categoryId,

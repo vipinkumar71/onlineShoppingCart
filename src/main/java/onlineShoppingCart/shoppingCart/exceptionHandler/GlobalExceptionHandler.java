@@ -22,7 +22,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<?> handleMethodArgumentNotValid(MethodArgumentNotValidException ex) {
         System.out.println("in global handler : method arg invalid");
-        Map<String, String> errorMap = ex.getFieldErrors().stream() // Stream<FieldError>
+        Map<String, String> errorMap = ex.getFieldErrors().stream()
                 .collect(Collectors.toMap(FieldError::getField, FieldError::getDefaultMessage));
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorMap);
     }
@@ -55,9 +55,8 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(Exception.class)
     public ResponseEntity<?> handleException(Exception e) {
-        System.out.println("in run time exc handler");
+        System.out.println("in run time Exception handler");
         e.printStackTrace();
-
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                 .body(new ApiResponse(e.getMessage()));
     }
@@ -82,7 +81,7 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(EmptyInputException.class)
-    public ResponseEntity<String> handleEmptyInputException(EmptyInputException emptyIputException) {
+    public ResponseEntity<String> handleEmptyInputException(EmptyInputException emptyInputException) {
         return new ResponseEntity<String>("Input fields are empty", HttpStatus.BAD_REQUEST);
     }
 

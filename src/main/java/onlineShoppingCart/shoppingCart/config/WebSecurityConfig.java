@@ -20,8 +20,8 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;;
 
-@EnableWebSecurity // mandatory
-@Configuration // mandatory
+@EnableWebSecurity
+@Configuration
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class WebSecurityConfig {
 
@@ -59,9 +59,8 @@ public class WebSecurityConfig {
 
     }
 
-    // configure auth mgr bean : to be used in SignInSignUp REST controller
     @Bean
-    public AuthenticationManager authenticatonMgr(AuthenticationConfiguration config) throws Exception {
+    public AuthenticationManager authenticationMgr(AuthenticationConfiguration config) throws Exception {
         return config.getAuthenticationManager();
     }
 

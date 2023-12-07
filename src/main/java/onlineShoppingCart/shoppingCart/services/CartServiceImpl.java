@@ -55,7 +55,7 @@ public class CartServiceImpl implements CartService {
     public Carts getMyCart(Long userId) {
 
         Carts cart = repository.findById(userId)
-                .orElseThrow(() -> new ElementNotFountException("User", "404", "Not Found")).getCart();
+                .orElseThrow(() -> new ElementNotFountException("User not found by this id", "404", "Not Found")).getCart();
         List<CartItemRespDTO> tempList = new ArrayList<CartItemRespDTO>();
         if (cart.getTotalItems() == 0) {
             throw new ElementNotFountException("Cart ", "404", " is Empty");

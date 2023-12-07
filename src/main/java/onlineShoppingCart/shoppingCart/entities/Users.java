@@ -106,10 +106,4 @@ public class Users extends BaseEntity{
         return "Users [firstName=" + firstName + ", lastName=" + lastName + ", email=" + email + ", password="
                 + password + ", role=" + role + ", mobileNumber=" + mobileNumber + ", getId()=" + getId() + "]";
     }
-
-
-
-
-
-
 }

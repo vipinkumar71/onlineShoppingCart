@@ -26,23 +26,18 @@ import javax.validation.Valid;
 @RequestMapping("/auth")
 @Slf4j
 public class SignInSignUpController {
-
-    //dep : JWT utils : for generating JWT
     @Autowired
     private JwtUtils utils;
 
-    // dep : Auth mgr
     @Autowired
     private AuthenticationManager manager;
 
-    // dep : user service for handling users
     @Autowired
     private UserService userService;
 
     @Autowired
     private ModelMapper mapper;
 
-    // add a method to authenticate user . In case of success --send back token , o.w send back err mesg
     @PostMapping("/signin")
     public ResponseEntity<?> validateUserCreateToken(@RequestBody @Valid AuthRequest request) {
         // store incoming user details(not yet validated) into Authentication object

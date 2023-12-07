@@ -35,7 +35,7 @@ public class ImageHandlingServiceImpl implements ImageHandlingService {
             System.out.println("creating images folder...");
             path.mkdirs();
         } else
-            System.out.println("folder alrdy exists....");
+            System.out.println("folder already exists....");
     }
 
     @Override

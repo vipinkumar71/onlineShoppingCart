@@ -32,7 +32,6 @@ public class OrderDetails extends BaseEntity{
 
     public OrderDetails() {
         super();
-        System.out.println("in ctor"+getClass().getName());
     }
 
     public OrderDetails(Integer quantity, Double totalPrice, Orders orderId, Products productId) {

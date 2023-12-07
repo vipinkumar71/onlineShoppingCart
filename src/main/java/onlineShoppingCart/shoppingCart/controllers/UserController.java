@@ -19,20 +19,16 @@ public class UserController {
 
     @PostMapping
     public ResponseEntity<?> userRegistration(@RequestBody @Valid UsersDTO user) {
-        // invoke service layer method , for saving : user info + associated roles info
         return ResponseEntity.status(HttpStatus.CREATED).body(userService.addUserDetails(user));
     }
 
     @DeleteMapping("/admin/{userId}")
     public ResponseEntity<?> deleteUser(@PathVariable Long userId) {
-
         return ResponseEntity.status(HttpStatus.CREATED).body(userService.deleteUserDetails(userId));
     }
 
     @PutMapping
     public ResponseEntity<?> userUpdate(@RequestBody @Valid UsersDTO user) {
-
-        // invoke service layer method , for saving : user info + associated roles info
         return ResponseEntity.status(HttpStatus.CREATED).body(userService.updateUserDetails(user));
     }
 

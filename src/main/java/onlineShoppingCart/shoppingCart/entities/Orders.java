@@ -49,7 +49,6 @@ public class Orders extends BaseEntity{
 
     public Orders() {
         super();
-        System.out.println("in ctor of"+getClass().getName());
     }
 
 

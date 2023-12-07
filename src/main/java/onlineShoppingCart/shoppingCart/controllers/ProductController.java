@@ -75,8 +75,6 @@ public class ProductController {
         return productService.getProductById(productId);
     }
 
-    // Add REST end point to upload image
-    // URL : http://host:port/products/{productId}/image , Method=POST
     @PostMapping(value = "/{productId}/image")
     public ResponseEntity<?> uploadImageToServerSideFolder(@RequestParam MultipartFile imageFile,
                                                            @PathVariable Long productId) throws IOException {
@@ -84,8 +82,6 @@ public class ProductController {
         return new ResponseEntity<>(imageService.uploadImage(productId, imageFile), HttpStatus.CREATED);
     }
 
-    // Add REST end point to download/serve image , method=GET
-    // URL : http://host:port/products/{productId}/image
     @GetMapping(value = "/{productId}/image", produces = { MediaType.IMAGE_GIF_VALUE, MediaType.IMAGE_JPEG_VALUE,
             MediaType.IMAGE_PNG_VALUE })
     public ResponseEntity<?> serveImageFromServerSideFolder(@PathVariable Long productId) throws IOException {

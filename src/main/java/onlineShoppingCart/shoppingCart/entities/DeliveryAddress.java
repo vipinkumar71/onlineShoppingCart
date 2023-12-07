@@ -35,7 +35,6 @@ public class DeliveryAddress extends BaseEntity{
 
     public DeliveryAddress() {
         super();
-        System.out.println("in ctor "+getClass().getName());
     }
 
     public DeliveryAddress(String adressLine1, String adressLine2, String city, String state, String zipCode) {
@@ -66,15 +65,4 @@ public class DeliveryAddress extends BaseEntity{
     public void setZipCode(String zipCode) {
         this.zipCode = zipCode;
     }
-
-//	public Orders getOrderInfo() {
-//		return orderInfo;
-//	}
-//
-//	public void setOrderInfo(Orders orderInfo) {
-//		this.orderInfo = orderInfo;
-//	}
-
-
-
 }
